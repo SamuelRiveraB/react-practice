@@ -5,10 +5,25 @@ import Searchbox from "../components/Searchbox";
 import "./App.css";
 import Scroll from "../components/Scroll";
 import ErrorBoundary from "../components/ErrorBoundary";
+import { connect } from "react-redux";
+
+import { setSearchField } from "../actions";
+
+const mapStateToProps = (state) => {
+  return {
+    searchField: state.searchRobots.searchField,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+  };
+};
 
 const App = () => {
   const [robots, setRobots] = useState([]);
-  const [searchfield, setSearchfield] = useState("");
+  // const [searchfield, setSearchfield] = useState("");
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -20,12 +35,14 @@ const App = () => {
       });
   }, []);
 
-  const onSearchChange = (e) => {
-    setSearchfield(e.target.value);
-  };
+  // const onSearchChange = (e) => {
+  //   setSearchfield(e.target.value);
+  // };
 
   const filteredRobots = robots.filter((robot) => {
-    return robot.name.toLowerCase().includes(searchfield.toLowerCase());
+    return robot.name
+      .toLowerCase()
+      .includes(this.props.searchField.toLowerCase());
   });
 
   return !robots.length ? (
@@ -33,7 +50,7 @@ const App = () => {
   ) : (
     <div className="tc">
       <h1 className="f2">RoboFriends</h1>
-      <Searchbox searchChange={onSearchChange} />
+      <Searchbox searchChange={this.props.onSearchChange} />
       <Scroll>
         <ErrorBoundary>
           <CardList robots={filteredRobots} />
@@ -43,4 +60,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
