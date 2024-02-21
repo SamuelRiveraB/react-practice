@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.6b40e444.css",
-    "main.js": "/static/js/main.6ee4e0df.js",
-    "static/js/592.e74500f2.chunk.js": "/static/js/592.e74500f2.chunk.js",
-    "service-worker.js": "/service-worker.js",
-    "static/media/SEGA.TTF": "/static/media/SEGA.8a619f32417a0fe72728.TTF",
-    "index.html": "/index.html",
-    "main.6b40e444.css.map": "/static/css/main.6b40e444.css.map",
-    "main.6ee4e0df.js.map": "/static/js/main.6ee4e0df.js.map",
-    "592.e74500f2.chunk.js.map": "/static/js/592.e74500f2.chunk.js.map"
+    "main.css": "/react-practice/static/css/main.12479fae.css",
+    "main.js": "/react-practice/static/js/main.f1986dad.js",
+    "static/js/592.e74500f2.chunk.js": "/react-practice/static/js/592.e74500f2.chunk.js",
+    "service-worker.js": "/react-practice/service-worker.js",
+    "static/media/SEGA.TTF": "/react-practice/static/media/SEGA.8a619f32417a0fe72728.TTF",
+    "index.html": "/react-practice/index.html",
+    "main.12479fae.css.map": "/react-practice/static/css/main.12479fae.css.map",
+    "main.f1986dad.js.map": "/react-practice/static/js/main.f1986dad.js.map",
+    "592.e74500f2.chunk.js.map": "/react-practice/static/js/592.e74500f2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6b40e444.css",
-    "static/js/main.6ee4e0df.js"
+    "static/css/main.12479fae.css",
+    "static/js/main.f1986dad.js"
   ]
 }
