@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Header from "../components/Header";
 import CardList from "../components/CardList";
 import Searchbox from "../components/Searchbox";
 // import { robots } from "../robots";
@@ -47,7 +48,7 @@ const App = () => {
     <h1>Loading...</h1>
   ) : (
     <div className="tc">
-      <h1 className="f2">RoboFriends</h1>
+      <Header />
       <Searchbox searchChange={onSearchChange} />
       <Scroll>
         <ErrorBoundary>

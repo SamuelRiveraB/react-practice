@@ -1,4 +1,5 @@
 const Searchbox = ({ searchChange }) => {
+  console.log("Searchbox");
   return (
     <div className="tc">
       <input
