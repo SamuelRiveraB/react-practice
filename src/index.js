@@ -10,6 +10,7 @@ import reportWebVitals from "./reportWebVitals";
 import "tachyons";
 import { searchRobots } from "./reducers";
 import { getDefaultNormalizer } from "@testing-library/react";
+import * as serviceWorker from "./serviceWorkerRegistration.js";
 
 const logger = createLogger();
 const store = configureStore({
@@ -31,3 +32,4 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+serviceWorker.unregister();
