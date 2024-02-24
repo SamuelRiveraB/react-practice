@@ -1,6 +1,6 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
 import Header from "../components/Header";
-import CardList from "../components/CardList";
+import CardList from "../components/CardList.tsx";
 import Searchbox from "../components/Searchbox.tsx";
 // import { robots } from "../robots";
 import "./App.css";

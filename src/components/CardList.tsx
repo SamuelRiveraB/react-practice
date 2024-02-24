@@ -1,10 +1,15 @@
-import Card from "./Card";
+import Card from "./Card.tsx";
+import { Robot } from "../containers/App";
 
-const CardList = ({ robots }) => {
+type CardListProps = {
+  robots: Robot[];
+};
+
+const CardList = ({ robots }: CardListProps) => {
   console.log("Cardlist");
   return (
     <>
-      {robots.map((user, i) => {
+      {robots.map((user) => {
         return (
           <Card
             key={user.id}
