@@ -5,7 +5,7 @@ import { applyMiddleware } from "redux";
 import { configureStore } from "@reduxjs/toolkit";
 import { createLogger } from "redux-logger";
 import "./index.css";
-import App from "./containers/App";
+import App from "./containers/App.tsx";
 import reportWebVitals from "./reportWebVitals";
 import "tachyons";
 import { searchRobots } from "./reducers";

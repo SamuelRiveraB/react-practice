@@ -7,6 +7,7 @@ import "./App.css";
 import Scroll from "../components/Scroll";
 import ErrorBoundary from "../components/ErrorBoundary";
 import { connect } from "react-redux";
+import { getData } from "../utils/data.utils.ts";
 
 import { setSearchField } from "../actions";
 
@@ -22,18 +23,30 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
+type Robot = {
+  id: string;
+  name: string;
+  email: string;
+};
+
 const App = () => {
   const [robots, setRobots] = useState([]);
   const [searchfield, setSearchfield] = useState("");
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => {
-        return response.json();
-      })
-      .then((users) => {
-        setRobots(users);
-      });
+    // fetch("https://jsonplaceholder.typicode.com/users")
+    //   .then((response) => {
+    //     return response.json();
+    //   })
+    //   .then((users) => {
+    //     setRobots(users);
+    //   });
+
+    const fetchUsers = async () => {
+      const users = await getData<Robot[]>(
+        "https://jsonplaceholder.typicode.com/users"
+      );
+    };
   }, []);
 
   const onSearchChange = (e) => {
