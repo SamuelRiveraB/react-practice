@@ -1,7 +1,7 @@
-import { ChangeEventHandler } from "react";
+import { ChangeEvent } from "react";
 
 interface ISearchBoxProps {
-  searchChange: ChangeEventHandler<HTMLInputElement>;
+  searchChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
 const Searchbox = ({ searchChange }: ISearchBoxProps): JSX.Element => {
