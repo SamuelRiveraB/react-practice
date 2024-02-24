@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ChangeEvent } from "react";
 import Header from "../components/Header";
 import CardList from "../components/CardList";
 import Searchbox from "../components/Searchbox.tsx";
@@ -23,14 +23,14 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-type Robot = {
+export type Robot = {
   id: string;
   name: string;
   email: string;
 };
 
 const App = () => {
-  const [robots, setRobots] = useState([]);
+  const [robots, setRobots] = useState<Robot[]>([]);
   const [searchfield, setSearchfield] = useState("");
 
   useEffect(() => {
@@ -46,10 +46,12 @@ const App = () => {
       const users = await getData<Robot[]>(
         "https://jsonplaceholder.typicode.com/users"
       );
+      setRobots(users);
     };
+    fetchUsers();
   }, []);
 
-  const onSearchChange = (e) => {
+  const onSearchChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setSearchfield(e.target.value);
   };
 
