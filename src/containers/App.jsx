@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "../components/Header";
 import CardList from "../components/CardList";
-import Searchbox from "../components/Searchbox";
+import Searchbox from "../components/Searchbox.tsx";
 // import { robots } from "../robots";
 import "./App.css";
 import Scroll from "../components/Scroll";

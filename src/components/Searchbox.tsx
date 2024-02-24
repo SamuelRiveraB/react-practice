@@ -1,4 +1,10 @@
-const Searchbox = ({ searchChange }) => {
+import { ChangeEventHandler } from "react";
+
+interface ISearchBoxProps {
+  searchChange: ChangeEventHandler<HTMLInputElement>;
+}
+
+const Searchbox = ({ searchChange }: ISearchBoxProps): JSX.Element => {
   console.log("Searchbox");
   return (
     <div className="tc">
