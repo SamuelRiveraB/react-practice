@@ -11,15 +11,18 @@ import { getData } from "../utils/data.utils.ts";
 
 import { setSearchField } from "../actions";
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: any) => {
+  // Any for now
   return {
     searchField: state.searchRobots.searchField,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: any) => {
+  // Any for now
   return {
-    onSearchChange: (event) => dispatch(setSearchField(event.target.value)),
+    onSearchChange: (event: ChangeEvent<HTMLInputElement>) =>
+      dispatch(setSearchField(event.target.value)),
   };
 };
 
